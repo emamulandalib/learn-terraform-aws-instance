@@ -4,6 +4,14 @@ terraform {
       source = "hashicorp/aws"
     }
   }
+
+  backend "remote" {
+    organization = "Cromonix"
+
+    workspaces {
+      name = "learn-terraform-aws-instance"
+    }
+  }
 }
 
 provider "aws" {
